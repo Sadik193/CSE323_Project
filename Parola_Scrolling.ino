@@ -41,7 +41,7 @@
 // NOTE: These pin numbers will probably not work with your hardware and may
 // need to be adapted
 #define HARDWARE_TYPE MD_MAX72XX::FC16_HW
-#define MAX_DEVICES 11
+#define MAX_DEVICES 4
 #define CLK_PIN   13
 #define DATA_PIN  11
 #define CS_PIN    10
@@ -57,18 +57,18 @@ const uint8_t SPEED_IN = A5;
 const uint8_t DIRECTION_SET = 8;  // change the effect
 const uint8_t INVERT_SET = 9;     // change the invert
 
-const uint8_t SPEED_DEADBAND = 5;
+const uint8_t SPEED_DEADBAND = 125;
 #endif // USE_UI_CONTROL
 
-uint8_t scrollSpeed = 25;    // default frame delay value
+uint8_t scrollSpeed = 25;                                     // default frame delay value
 textEffect_t scrollEffect = PA_SCROLL_LEFT;
 textPosition_t scrollAlign = PA_LEFT;
-uint16_t scrollPause = 2000; // in milliseconds
+uint16_t scrollPause = 2000;                                  // in milliseconds
 
 // Global message buffers shared by Serial and Scrolling functions
 #define	BUF_SIZE	75
-char curMessage[BUF_SIZE] = { "Welcome" };
-char newMessage[BUF_SIZE] = { "NSU" };
+char curMessage[BUF_SIZE] = { "" };
+char newMessage[BUF_SIZE] = { "NSU".};
 bool newMessageAvailable = true;
 
 #if USE_UI_CONTROL
